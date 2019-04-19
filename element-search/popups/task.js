@@ -12,3 +12,5 @@ document.getElementsByClassName("show-success").item(0).onclick = function () {
 document.getElementsByClassName("modal__close").item(2).onclick = function () {
     document.getElementById("modal_success").classList.remove("modal_active");
 }
+
+// Я понимаю, что реализация очень ленивая, нужно сделать с использованием функций для использования кнопок закрытия окон
