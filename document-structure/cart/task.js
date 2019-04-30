@@ -20,6 +20,7 @@ addInCart = (e) => {
         return
     } else {
         cart.insertAdjacentHTML("beforeend", `<div class="cart__product-${e}" data-id="${e}"><img class="cart__product-image" src="${document.getElementsByClassName("product__image").item(e).src}"><div class="cart__product-count" id="${e}">${productCount.item(e).textContent}</div></div>`);
+        //Не понимаю почему дублируется вторая кнопка один раз, но в остальном работает как часы
     }
 }
 
