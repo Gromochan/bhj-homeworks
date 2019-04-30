@@ -12,12 +12,15 @@ quantityInc = (e) => {
     productCount.item(e).textContent = parseInt(productCount.item(e).textContent) + 1;
 }
 
+
 addInCart = (e) => {
-    console.log(document.getElementsByClassName(`cart__product-${e}`))
-    if (document.getElementsByClassName(`cart__product-${e}`)) {
-        document.getElementsByClassName("cart__product-count").item(e).textContent === productCount.item(e).textContent;
+    if (document.getElementsByClassName(`cart__product-${e}`).item(e) != null) {
+        let cartContent = document.getElementById(`${e}`);
+        cartContent.textContent = parseInt(cartContent.textContent) + parseInt(productCount.item(e).textContent);
+        return
+    } else {
+        cart.insertAdjacentHTML("beforeend", `<div class="cart__product-${e}" data-id="${e}"><img class="cart__product-image" src="${document.getElementsByClassName("product__image").item(e).src}"><div class="cart__product-count" id="${e}">${productCount.item(e).textContent}</div></div>`);
     }
-    cart.insertAdjacentHTML("beforeend", `<div class="cart__product-${e}" data-id="${e}"><img class="cart__product-image" src="image.png"><div class="cart__product-count">${productCount.item(e).textContent}</div></div>`);
 }
 
 
