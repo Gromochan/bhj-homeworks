@@ -14,13 +14,13 @@ quantityInc = (e) => {
 
 
 addInCart = (e) => {
-    if (document.getElementsByClassName(`cart__product-${e}`).item(e) != null) {
+    if (document.getElementById(`${e}`) != null) {
         let cartContent = document.getElementById(`${e}`);
         cartContent.textContent = parseInt(cartContent.textContent) + parseInt(productCount.item(e).textContent);
         return
     } else {
         cart.insertAdjacentHTML("beforeend", `<div class="cart__product-${e}" data-id="${e}"><img class="cart__product-image" src="${document.getElementsByClassName("product__image").item(e).src}"><div class="cart__product-count" id="${e}">${productCount.item(e).textContent}</div></div>`);
-        //Не понимаю почему дублируется вторая кнопка один раз, но в остальном работает как часы
+
     }
 }
 
