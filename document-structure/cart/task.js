@@ -6,7 +6,9 @@ const cart = document.getElementsByClassName("cart__products").item(0);
 
 
 quantityDec = (e) => {
-    productCount.item(e).textContent = parseInt(productCount.item(e).textContent) - 1;
+    if (parseInt(productCount.item(e).textContent) > 1) {
+        productCount.item(e).textContent = parseInt(productCount.item(e).textContent) - 1;
+    }
 }
 quantityInc = (e) => {
     productCount.item(e).textContent = parseInt(productCount.item(e).textContent) + 1;
